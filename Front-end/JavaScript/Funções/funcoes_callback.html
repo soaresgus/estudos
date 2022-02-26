@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções de callback</title>
+
+    <script>
+
+        function enviarArtigo(id, callbackSucesso, callbackErro) {
+            //logica para puxar o id
+            
+            if(true) {
+                callbackSucesso("Callback em JS", "Descrevendo o artigo...");
+            }else {
+                callbackErro("Erro ao encontrar o artigo!");
+            }
+        }
+
+        var callbackSucesso = function(titulo, desc) {
+            document.write('<h1>'+titulo+"</h1>");
+            document.write('<hr/>');
+            document.write('<h2>'+desc+'</h2>');
+        }
+
+        var callbackErro = function(erro) {
+            document.write('Erro: '+erro);
+        }
+
+        enviarArtigo(1, callbackSucesso, callbackErro);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

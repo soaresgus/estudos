@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de erros</title>
+
+    <script>
+
+        var video = []
+
+        video[1] = []
+        video[1]['nome'] = 'Breaking Bad';
+        video[1]['categoria'] = 'Suspense'
+
+        function getVideo(video) {
+
+            try {
+                console.log(video[0]['nome']);
+            } catch (e) {
+                if (e.toString().includes('Cannot read properties of undefined')) {
+                    console.log('Vídeo não encontrado! Outras sugestões: ' + video[1]['nome']);
+                }
+            } finally {
+                console.log('Isso sempre acontecerá')
+            }
+
+            console.log('A aplicação não morreu');
+        }
+
+        getVideo(video);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

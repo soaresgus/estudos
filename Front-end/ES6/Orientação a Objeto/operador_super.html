@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //O pilar da herança se consiste em você evitar repetição dentro dos objetos, 'importando' objetos para
+        //outros objetos.
+
+
+        class Animal {
+            constructor(cor, tamanho) {
+                this.cor = cor;
+                this.tamanho = tamanho;
+            }
+
+            dormir() {
+                console.log('Dormiu');
+            }
+        }
+
+        class Passaro extends Animal {
+            constructor(bico, cor, tamanho) {
+                /*this.cor = 'Branco e marrom'
+                this.tamanho = 30;*/
+                super(cor, tamanho);
+                //O super() é necessário sempre para dar acesso ao construtor da classe extendida,
+                //é necessário sempre que uma classe está herdando outra,
+                //e sempre deve estar antes de qualquer this.
+                this.bico = bico;
+            }
+
+            voar() {
+                console.log('Voou');
+            }
+
+            /*dormir() {
+                console.log('Dormiu');
+            }*/
+        }
+
+        class Papagaio extends Passaro {
+            constructor(sabeFalar, bico, cor, tamanho) {
+                /*this.cor = 'Verde';
+                this.tamanho = 20;
+                this.bico = 'Médio';
+                
+                Esses atributos foram excluidos pois o bico será herdado do Passaro,
+                e a cor e tamanho será herdado do Animal que está herdado no Passaro,
+                formando assim uma 'cascata'.
+                
+                */
+                super(bico, cor, tamanho);
+                this.sabeFalar = sabeFalar;
+            }
+
+            falar() {
+                console.log('Falar');
+            }
+        }
+
+        let papagaio = new Papagaio(true, 'Médio', 'Verde', 20);
+        console.log(papagaio);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

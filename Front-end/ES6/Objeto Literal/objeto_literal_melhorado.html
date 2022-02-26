@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //Objeto literal nada mais é que um objeto descritivo, muito utilizado quando apenas
+        //um único item é necessário, não um conjunto.
+
+        //O ES6 traz uma forma resumida para fazer o objeto literal
+
+        let nomel = 'Marcos';
+        let idade = 24;
+        let sexo = 'Masculino';
+        let profissao = 'Garoto de programa';
+
+        //Forma convencional
+        let objeto = {
+            nome: nomel, //Atributo (chave) : Valor (variável)
+            idade: idade,
+            sexo: sexo,
+            profissao: profissao,
+            mostrarResumo: function() {
+                console.log(`${this.nome}, tem ${this.idade} anos, é do sexo ${this.sexo}, e trabalha como ${this.profissao}`);
+            }
+        }
+
+        console.log(objeto);
+        objeto.mostrarResumo();
+        
+        //Forma resumida (Lembrando que o atributo (chave) terá o mesmo nome da variável)
+        let objetoResumido = {
+            nomel,
+            idade,
+            sexo,
+            profissao,
+            mostrarResumo() {
+                console.log(`${this.nomel}, tem ${this.idade} anos, é do sexo ${this.sexo}, e trabalha como ${this.profissao}`);
+            }
+        }
+
+        console.log(objetoResumido);
+        objetoResumido.mostrarResumo();
+
+        objetoResumido.nomel = 'Henrique';
+        objetoResumido.cabelo = 'Ruivo';
+
+        console.log(objetoResumido);
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

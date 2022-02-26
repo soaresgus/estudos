@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+
+        //Destructuring pode ser entendido como uma forma de 'desestrutura o código',
+        //o deixando menos cheio, mais simples.
+
+        let Produto = {
+            descricao: 'Notebook',
+            preco: 1200,
+            detalhes: {
+                fabricante: 'Dell',
+                modelo: 'Alienware'
+            }
+        }
+
+        //Para objetos se usa as chaves ({}) no destructuring.
+
+        /*
+        let descricao = Produto.descricao;
+        let preco = Produto.preco;
+        */
+
+        //let {descricao, preco} = Produto;
+
+        //let {descricao: d, preco: p} = Produto;
+
+        //let {descricao: d, preco: p, detalhes: {fabricante, modelo}} = Produto;
+        
+        let {descricao: d, preco: p, detalhes: {fabricante: f, modelo: m}} = Produto;
+
+        console.log(d, p, f, m);
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

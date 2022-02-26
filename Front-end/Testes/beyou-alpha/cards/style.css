@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background: #f0f0f0;
+}
+
+a {
+    color: #252525;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 500px;
+    background: white;
+    border-radius: 15px;
+    justify-content: center;
+    padding: 35px;
+}
+
+.development .title{
+    font-size: 42px;
+}
+
+.development {
+    display: flex;
+}
+
+.development .languages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    border-left: 2px solid #c5c5c5;
+    height: 100%;
+}
+
+.development i {
+    font-size: 60px;
+    padding: 5px;
+}
