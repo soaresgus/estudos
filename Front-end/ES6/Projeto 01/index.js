@@ -1,3 +1,4 @@
+//Objeto despesa
 class Despesa {
     constructor(ano, mes, dia, tipo, descricao, valor) {
         this.ano = ano;
@@ -8,6 +9,7 @@ class Despesa {
         this.valor = valor;
     }
 
+	//Validar os capampos, se são vazios
     validarDados() {
         for (let i in this) {
             if (this[i] == undefined || this[i] == null || this[i] == '') {
@@ -18,6 +20,7 @@ class Despesa {
     }
 }
 
+//Objeto Bd, controlando o local storage
 class Bd {
     constructor() {
         this.id = localStorage.getItem('id');
@@ -27,10 +30,12 @@ class Bd {
         }
     }
 
+	//Está incrementando o id do localstorage
     getProximoId() {
         return parseInt(localStorage.getItem('id')) + 1;
     }
 
+	//Está gravando um objeto no localstorage
     gravar(objeto) {
         let id = this.getProximoId();
 
@@ -40,6 +45,7 @@ class Bd {
         //JSON.parse(...) Converte uma string JSON para um objeto. 
     }
 
+	//Recupera todos os registros do localstorage
     recuperarTodosRegistros() {
         let id = localStorage.getItem('id');
 
@@ -57,6 +63,7 @@ class Bd {
         return despesas;
     }
 
+	//Filtra os registros do localstorage
     pesquisar(despesa) {
         let despesaFiltrada = []
         despesaFiltrada = this.recuperarTodosRegistros();
@@ -91,6 +98,7 @@ class Bd {
 
     }
 
+	//Remove um registro do localstorage
     remover(id) {
         localStorage.removeItem(id);
     }
@@ -98,6 +106,7 @@ class Bd {
 
 let bd = new Bd();
 
+//Função de registrar despesa
 function registrarDespesa() {
 
     let ano = document.getElementById('ano');
@@ -116,18 +125,17 @@ function registrarDespesa() {
         valor.value,
     );
 
-    let alertaConteudo = document.getElementById('alerta-content');
-    let alertaTitle = document.getElementById('alerta-title');
-    let alertaBtn = document.getElementById('alerta-btn');
-
+	//Caso os campos não sejam vazios
     if (despesa.validarDados()) {
 
+		//Retirando os 0 do dia, caso seja menor que 10
         if (despesa.dia < 10 && despesa.dia.length > 1) {
             despesa.dia = despesa.dia.replaceAll('0', '');
         }
 
         bd.gravar(despesa);
 
+		//Pegando todos os elementos do objeto despesa e limpando seu value.
         for (let i in despesa) {
             document.getElementById(i).value = '';
         }
@@ -138,7 +146,7 @@ function registrarDespesa() {
     }
 }
 
-
+//Adiciona todos os registros na página de consulta
 function chamarTodosRegistros(despesas = [], filtro = false) {
     if (despesas.length == 0 && filtro == false) {
         despesas = bd.recuperarTodosRegistros();
@@ -192,6 +200,7 @@ function chamarTodosRegistros(despesas = [], filtro = false) {
     
 }
 
+//Pesquisa as despesas
 function pesquisarDespesa() {
     let ano = document.getElementById('ano').value;
     let mes = document.getElementById('mes').value;
@@ -208,6 +217,7 @@ function pesquisarDespesa() {
     this.chamarTodosRegistros(despesaFiltrada, true);
 }
 
+//Gerar um modal do bootstrap
 function modal(title, content, danger) {
     let alertaConteudo = document.getElementById('alerta-content');
     let alertaTitle = document.getElementById('alerta-title');
@@ -234,6 +244,7 @@ function modal(title, content, danger) {
 
 }
 
+//Correção de valores dos campos dia e valor.
 document.getElementById('dia').addEventListener('blur', (e) => {
     if (e.target.value > 31) {
         e.target.value = 31;
