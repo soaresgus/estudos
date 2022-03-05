@@ -1,0 +1,107 @@
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<title>App Pesquisa Endereço</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-light bg-light mb-4">
+		<div class="container">
+			<div class="navbar-brand mb-0 h1">
+				<h3>App Pesquisa Endereço</h3>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row form-group">
+			<div class="col-sm-3">
+				<input type="text" class="form-control" placeholder="CEP" id="cep"
+					onblur="consultaCep(this.value)" />
+			</div>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" placeholder="Endereço" id="endereco" readonly />
+			</div>
+		</div>
+
+		<div class="row form-group">
+			<div class="col-sm-6">
+				<input type="text" class="form-control" placeholder="Bairro" id="bairro" readonly />
+			</div>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" placeholder="Cidade" id="cidade" readonly />
+			</div>
+
+			<div class="col-sm-2">
+				<input type="text" class="form-control" placeholder="UF" id="uf" readonly />
+			</div>
+		</div>
+
+		<div class="row col-12 justify-content-center text-center d-none" id="alerta">
+			<div class="bg-light p-3 rounded">
+				Cep informado não foi encontrado
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function consultaCep(cep) {
+			if (cep != '') {
+				limparCampos();
+				if (cep.length >= 8 && cep.length <= 9) {
+
+					let request = new XMLHttpRequest();
+
+					request.open('GET', 'http://viacep.com.br/ws/' + cep + '/json/unicode');
+					
+					request.onreadystatechange = () => {
+						if (request.readyState == 4) {
+							let cepJSON = JSON.parse(request.responseText);
+							
+							if (!('erro' in cepJSON)) {
+								document.getElementById('alerta').classList.add('d-none');
+								aplicarCep(cepJSON);
+							} else {
+								document.getElementById('alerta').classList.remove('d-none');
+							}
+						}
+					}
+					
+					request.send();
+				}
+			}
+		}
+
+		function limparCampos() {
+			let endereco = document.getElementById('endereco');
+			let bairro = document.getElementById('bairro');
+			let cidade = document.getElementById('cidade');
+			let uf = document.getElementById('uf');
+
+			endereco.value = '';
+			bairro.value = '';
+			cidade.value = '';
+			uf.value = '';
+		}
+
+		function aplicarCep(json) {
+			let endereco = document.getElementById('endereco');
+			let bairro = document.getElementById('bairro');
+			let cidade = document.getElementById('cidade');
+			let uf = document.getElementById('uf');
+
+			endereco.value = json.logradouro;
+			bairro.value = json.bairro;
+			cidade.value = json.localidade;
+			uf.value = json.uf;
+		}
+
+	</script>
+
+</body>
+
+</html>

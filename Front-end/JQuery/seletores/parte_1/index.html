@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--JQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Selecionando elementos</h1>
+
+    <div>Div 1</div>
+    <div>Div 2</div>
+
+    <ul>
+        <li>Menu 1 - Item 1</li>
+        <li>Menu 1 - Item 2</li>
+        <li>Menu 1 - Item 3</li>
+    </ul>
+
+    <ul>
+        <li class="menu2">Menu 2 - Item 1</li>
+        <li class="menu2">Menu 2 - Item 2</li>
+        <li class="menu2">Menu 2 - Item 3</li>
+    </ul>
+
+    <input type="text" placeholder="Texto" id="input">
+
+    <select name="" id="">
+        <option value="">Selecione uma opção</option>
+        <option value="">opção 1</option>
+        <option value="">opção 2</option>
+    </select>
+
+    <br>
+
+    <img src="carro.jpg" alt="">
+
+    <script>
+        console.log($('h1')); //Seleção por tag
+        console.log($('.menu2')); //Seleção por classe
+        console.log($('#input')); //Seleção por id
+    </script>
+
+</body>
+
+</html>

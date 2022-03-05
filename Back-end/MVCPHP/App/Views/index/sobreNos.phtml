@@ -1,0 +1,10 @@
+<h1>Sobre nós</h1>
+<hr>
+
+<?php foreach ($this->view->dados as $key => $info) { ?>
+
+    <h4><?= $info['titulo'] ?></h4>
+    <p><?= $info['descricao'] ?></p>
+    <br>
+
+<?php } ?>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--JQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+    <style>
+        .vermelho {
+            border: 2px;
+            background-color: red;
+            color: yellow;
+        }
+    </style>
+
+<body>
+
+    <div id="div1">
+        Div 1
+    </div>
+   
+    <script>
+        $('#div1').css('font-size', '40px').css('padding', '15px'); //Css inline (atributo, valor)
+
+        console.log($('#div1').hasClass('vermelho')); //True ou false para se possui a classe no parâmetro
+        $('#div1').removeClass('vermelho') //Remove classe
+        $('#div1').addClass('vermelho'); //Adiciona classe
+        console.log($('#div1').hasClass('vermelho'));
+    </script>
+    
+</body>
+
+</html>
