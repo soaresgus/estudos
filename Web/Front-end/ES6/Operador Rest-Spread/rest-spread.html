@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //Chamamos de spread quando é utilizado para espalhar, distribuir
+        //Chamamos de rest quando é utilizado para juntar
+
+        //Spread --------------------------------
+
+        //Strings
+
+        let titulo = 'Como utilizar o operador rest/spread!'
+
+        console.log(...titulo);
+        console.log([...titulo]);
+
+        //Arays
+
+        let listaCursosFront = ['HTML', 'CSS', 'JS'];
+        let listaCursosBack = ['PHP', 'Node.JS'];
+        let listaCursosTotal = [...listaCursosFront, ...listaCursosBack];
+        
+        console.log(...listaCursosBack);
+        console.log(listaCursosTotal);
+
+        //Objetos
+
+        let dado = {nome: 'João', idade: 42};
+        let rua = {rua: 'Rua ABC', numero: 174};
+
+        let cadastro = {...dado, ...rua};
+
+        console.log(cadastro);
+        console.log('-----------------------------------')
+
+        //Rest -----------------------------
+
+        function soma(...i /*Juntou todos os parâmetros em um array*/) {
+            let resultado = 0;
+
+            console.log(i);
+
+            i.forEach(i => resultado+=i);
+
+            return resultado;
+        }
+
+        console.log(soma(1, 2, 3, 4, 5));
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

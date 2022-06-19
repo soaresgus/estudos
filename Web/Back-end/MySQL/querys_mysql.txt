@@ -1,0 +1,196 @@
+
+// CRIAR DATABASES ---IMPORTANTE---
+CREATE DATABASE nome;
+
+// EXCLUIR DATABASES
+DROP DATABASE nome;
+
+//CRIAR TABELA (Exemplo 1) ---IMPORTANTE---
+CREATE TABLE tb_cursos(
+	id_curso int not null, // nome da coluna tipo de dado (not null = não pode ser vazio) 
+    imagem_curso varchar(100) not null, // varchar(100) - Texto váriavel de tamanho 100
+    nome_curso char(50) not null, // char(50) - Texto fixo de tamanho 50
+    resumo text null, // null = Pode ser vazio, ou seja não é obrigatório
+    data_cadastro datetime not null,
+    ativo boolean default true, // Ele recebe um valor padrão caso nada seja inserido
+    investimento float(8,2) default 0 // E como possui um valor padrão não precisa ser obrigatório, pois sempre terá um valor
+);
+
+(Exemplo 2)
+
+CREATE TABLE tb_produtos(
+	id_produto int not null PRIMARY KEY AUTO_INCREMENT, 
+    // Primary Key, pois é chave de identificação do registro, Auto increment, pois a cada registro irá aumentar +1
+
+    produto varchar(200) not null,
+    valor float(8, 2) not null
+);
+
+(Exemplo 3)
+
+CREATE TABLE tb_descricao_tecnica(
+	id_descricao_tecnica int not null PRIMARY KEY AUTO_INCREMENT,
+    descricao_tecnica text not null,
+    id_produto int not null,
+    FOREIGN KEY(id_produto) REFERENCES tb_produto(id_produto)
+
+    // Para declarara a chave estrangeira o FOREIGN KEY(nome_coluna_tabela_atual) REFERENCES nome_tabela_estrangeira(nome_coluna_tabela 
+    estrangeira) é necessário.
+
+    // Então isso diz que, a coluna 'id_produto' é uma chave estrengeira que tem como referência a coluna 'id_produto' da tabela 
+    tb_produto
+);
+
+
+//EXCLUIR TABELA
+DROP TABLE nome;
+
+//EDITAR NOME TABELA
+RENAME TABLE nome_atual TO nome_novo;
+
+//CRIAR COLUNAS TABELA
+ALTER TABLE nome_tabela ADD nome_coluna especificacoes;
+
+//EDITAR COLUNAS TABELA
+ALTER TABLE nome_tabela CHANGE nome_coluna [especificacoes como se tivesse criando nova coluna];
+
+//DELETAR COLUNAS TABELA
+ALTER TABLE nome_tabela DROP nome_coluna;
+
+//INSERINDO DADOS TABELA ---IMPORTANTE---
+INSERT INTO nome_tabela(ativo, carga_horaria, data_cadastro, id_curso, imagem_curso, investimento, nome_curso, resumo) VALUES 
+(1, 109, '2022-03-02', 1, 'web_completo.png', 27.89, 'Desenvolvimento web completo', 'Desenvolva web completo'); 
+
+//(Nome colunas) VALUES (Valor colunas)
+
+//Vale citar que a ordem passado no primeiro parenteses precisa ser IDENTICO a ordem passada nos valores.
+//Também outra citação é que tipos DATETIME são passados como string na insercao, porém, no bd sera DATETIME.
+
+//SELECIONAR REGISTROS TABELA ---IMPORTANTE---
+SELECT coluna1, coluna2, colunaN FROM nome_tabela;
+(Selecionar todos os registros [Casos especificos] = SELECT * FROM nome_tabela);
+
+//FILTROS COM OPERADORES LOGICOS/COMPARACAO (WHERE) ---IMPORTANTE---
+SELECT * FROM tb_alunos WHERE interesse = 'Jogos' AND idade < 25;
+
+//Operadores de comparacao
+//> ; >= ; < ; <= ; =
+
+//Operadores logicos
+OR ; AND
+
+//FILTROS COM OPERADOR BETWEEN
+SELECT * FROM tb_alunos WHERE idade BETWEEN 15 AND 18;
+//Selecionando alunos com a idade entre 15 e 18
+//Ou seja, isso é igual a: SELECT * FROM tb_alunos WHERE idade >= 15 AND idade <= 18;
+
+//FILTROS COM OPERADOR IN
+SELECT * FROM tb_alunos WHERE interesse IN('Jogos', 'Esportes');
+//Selecionando alunas que tem interesse em Jogos OU Esportes
+//Ou seja, mesmo que: SELECT * FROM tb_alunos WHERE interesse='Jogos' OR interesse='Esportes';
+
+//FILTROS COM OPERADOR LIKE ---IMPORTANTE---
+SELECT * FROM tb_aluno WHERE nome LIKE 'Jorge';
+
+//irá retornar os nomes que seja jorge
+//porém, existe caracteres coringa no LIKE
+
+//A porcentagem (%) indica que tanto faz o que vem após ou antes, exemplo:
+SELECT * FROM tb_aluno WHERE nome LIKE 'jorge%'; // Independente do que venha depois irá retornar tudo que COMECA com 'jorge'
+
+SELECT * FROM tb_aluno WHERE nome LIKE '%jorge'; // Independente do que venha antes irá retornar tudo que ACABA com 'jorge'
+
+SELECT * FROM tb_aluno WHERE nome LIKE '%jorge%'; // Independente do que venha ANTES ou DEPOIS irá retornar tudo que POSSUI 'jorge'
+
+//O underline (_) indica caracteres específicos, tanto em quais, quanto em quantidade
+SELECT * FROM tb_aluno WHERE nome LIKE '__in'; // Procura um nome que acabe com 'in', porém que comece com 2 caracteres qualquer 
+
+//FILTROS POR ORDEENACAO ---IMPORTANTE---
+SELECT * FROM tb_alunos ORDER BY nome ASC;
+// está ordenando a coluna nome em ordem crescente, e como o nome é texto, está ordenando em ordem alfabética
+// e sendo crescente ordena de A-Z.
+
+SELECT * FROM tb_alunos ORDER BY nome DESC;
+// está ordenando a coluna nome em ordem decrescente, e como o nome é texto, está ordenando em ordem alfabética
+// e sendo decrescente ordena de Z-A.
+
+//FILTRAR POR LIMITACAO ---IMPORTANTE---
+SELECT * FROM tb_alunos LIMIT 10, 5; //irá mostrar 5 registros (parametro 2) entre os 11 primeiros registros ((parametro 1)+1)
+//Ou seja, irá mostrar do 11 ao 15
+
+//LIMAPR TODOS OS REGISTROS DA TABELA
+TRUNCATE nome_tabela;
+
+//SELECT - FUNÇÕES DE AGREGACAO
+SELECT MIN(nome_coluna) FROM nome_tabela // irá mostrar o menor valor da coluna dentro da tabela
+
+// Vale citar que ele retorna apenas o valor, não o objeto diretamente
+// Tambem existe o MAX e o AVG, no qual MAX é o maior valor e AVG é a média de todos os valores
+
+SELECT SUM(nome_coluna) FROM nome_tabela // Irá mostrar a soma dos valores da coluna 
+
+SELECT COUNT(nome_coluna) FROM nome_tabela // Irá contar quantos elementos possui a coluna
+
+//SELECT - AGRUPAR SELEÇÕES
+SELECT interesse, count(*) FROM tb_alunos GROUP BY interesse
+
+// O GROUP BY serve para você agrupar os valores iguais de uma coluna, 
+// e caso necessário, exibir seu valor usando funções de agregação
+
+// E é possível utilizar o HEAVING junto com o GROUP BY
+// O HEAVING irá filtrar sobre os grupos que o GROUP BY formou
+
+SELECT interesse, count(*) AS total FROM tb_alunos GROUP BY interesse HAVING total > 20
+
+// Aqui por exemplo, irá mostrar apenas os interesses no qual possui mais de 20 alunos.
+
+//ESTRUTA FINAL DO SELECT ---IMPORTANTE---
+
+SELECT 
+    nome_colunas (ou todas (*)) // Seleciona o que você quer mostrar
+FROM 
+    nome_tabela // Determina de qual tabela(s) esse dado será retirado
+WHERE
+    filtro // Filtros para os dados apresentados
+GROUP BY
+    nome_coluna // Agrupamento de valores iguagis
+HEAVING
+    filtro // Filtro para a quantidade do agrupamento
+LIMIT
+    onde_inicia+1, quantos_mostrar // De qual registro irá começar, e quantos registros irão mostrar
+
+//ATUALIZANDO REGISTROS ---IMPORTANTE---
+
+UPDATE nome_tabela SET nome_coluna1 = valor_coluna1, nome_colunaN = valor_colunaN WHERE condicao;
+
+// Mas pelo amor de Deus não se esqueça do FILTRO!!!, se não muda --TODAS-- as colunas
+
+//DELETANDO REGISTROS ---IMPORTANTE---
+
+DELETE FROM nome_tabela WHERE condicao
+
+//JOIN - JUNÇÃO ENTRE TABELAS ---IMPORTANTE---
+
+// O JOIN serve para unir tabelas que se relacionam (pk com fk) e trazer quais registros a PK traz na FK
+
+//LEFT JOIN
+SELECT * FROM tb_clientes LEFT JOIN tb_pedidos ON (tb_clientes.id_cliente = tb_pedidos.id_cliente)
+
+// O LEFT JOIN ele junta a tabela PK a esquerda e a FK a direita, trazendo assim quantos registros a PK possui na FK 
+// Vale citar que a tabela a esquerda (PK) será retornado todos os registros, porém, caso esse registro não possua relação na esquerda 
+// (FK) o valor será retornado como null.
+
+// Então nesse exemplo será mostrado todos clientes a esquerda, e a direita irá mostrar todos os pedidos aonde esses clientes estão,
+// lembrando que esse valor pode ser vazio.
+
+//RIGHT JOIN
+SELECT * FROM tb_clientes RIGHT JOIN tb_pedidos ON (tb_clientes.id_cliente = tb_pedidos.id_cliente)
+
+// O LEFT JOIN ele junta a tabela PK a direita e a FK a esquerda, trazendo assim quantos registros a FK possui na PK 
+// Vale citar que a tabela a esquerda (FK) será retornado todos os registros, porém, caso esse registro não possua relação na esquerda 
+// (PK) o valor será retornado como null.
+
+//INNER JOIN
+SELECT * FROM tb_clientes INNER JOIN tb_pedidos ON (tb_clientes.id_cliente = tb_pedidos.id_cliente)
+
+// O INNER JOIN, todos os registros que se relacionam aparecem, já os registros que são null na relação não aparecem. 

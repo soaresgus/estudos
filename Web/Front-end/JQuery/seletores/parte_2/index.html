@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--JQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <input class="classe1" type="text" placeholder="input 1">
+    <input type="text" placeholder="input 2">
+    <input type="text" placeholder="input 3">
+
+    <div class="classe1">div 1</div>
+    <div class="classe2">div 2</div>
+    <div class="classe2">div 3</div>
+
+    <ul class="lista1">
+        <li class="classe1">opcao 1</li>
+        <li class="classe2">opcao 2</li>
+        <li class="classe2">opcao 3</li>
+        <li class="classe2">opcao 4</li>
+        <li class="classe2">opcao 5</li>
+    </ul>
+
+    <script>
+        //Combinação de seletores
+        console.log($('li.classe1')); //Está selecionando um li com a classe classe1
+
+        console.log($('.lista1 .classe2')); //Está selecionando todos os elementos .classe2 que estão dentro de .lista1
+
+        console.log($('.lista1 .classe2'));
+
+        console.log($('.lista1 .classe2:first')); //Primeiro elemento
+        console.log($('.lista1 .classe2:last')); //Ultimo elemento
+        console.log($('.lista1 .classe2:odd')); //Elementos de indice impar
+        console.log($('.lista1 .classe2:even')); //Elementos de indice par
+    </script>
+
+</body>
+
+</html>

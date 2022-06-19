@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+       //O pilar do encapsulamento se consiste na segurança de um atributo
+       //(private, public, etc)
+       //Porém, o JS não possui essa função nativa então isso é relacionado com
+       //o nome do atributo, caso possua um underline (_) no inicio, ele será um atributo privado.
+       //Ou seja, não poderá ser acessado diretamente (teoricamente).
+
+        class Tv {
+            constructor() {
+                this._canais = [2, 4, 5, 7, 10];
+                this._canalAtivo = 5;
+                this._volume = 5;
+            }
+
+            //getters / setters
+            //Elementos getters tem como função extrair o resultado de um elemento privado
+            //Já os setter atribui o resultado de um elemento privado
+            get canalAtivo() {
+                return this._canalAtivo;
+            }
+
+            set canalAtivo(canal) {
+                if(this._canais.indexOf(canal) != -1) {
+                    this._canalAtivo = canal;
+                }
+            }
+        }
+
+        let tv1 = new Tv();
+
+        /*console.log(tv1._canalAtivo); 
+        Na teoria, por ser um elemento private essa ação de puxar diretamente não é adequada!*/
+
+        tv1.canalAtivo = 9;
+        console.log(tv1.canalAtivo);
+        //Não é necessário os parenteses, pois o 'canalAtivo()' não é uma função, é considerado um pseudo-variavel.
+    
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+/*Estrutura*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #fff url(imagens/fundo.png) repeat-x;
+}
+
+#container {
+    width: 750px;
+    margin: 0 auto;
+}
+
+/*Header*/
+
+#header {
+    height: 150px;
+    background: url(imagens/detalhe-topo.png) no-repeat right top;
+    padding-top: 25px;
+}
+
+.logo {
+    width: 152px;
+    height: 66px;
+    background: url(imagens/logo.png) no-repeat center;
+    text-indent: -3000px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#header ul {
+    background: #b10333;
+    margin-top: 30px;
+    float: left;
+}
+
+#header ul li {
+    float: left;
+}
+
+#header ul a {
+    font-size: 0.9em;
+    display: block;
+    padding: 0.5em 1.5em;
+    line-height: 2.1em;
+    text-decoration: none;
+    color: #fff;
+    background: url(imagens/divisor.png) no-repeat left center;
+}
+
+#header ul .primeiro a {
+    background: none;
+}
+
+#header ul a:hover {
+    color: #69001d;
+}
+
+body.home #nav-header a#home,
+body.brasil #nav-header a#brasil,
+body.internacional #nav-header a#internacional,
+body.fotos #nav-header a#fotos
+{
+    color: #fff;
+    background: #de003e;
+    cursor: text;
+}
+
+/*Header*/
+
+/*Box*/
+
+.box {
+    background: #f3f3f3 url(imagens/fundo-caixa.png);
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+.box h2 {
+    font-size: 1em;
+    background: #294c71;
+    color: #fff;
+    padding: 5px;
+}
+
+.box-content {
+    background: #fff;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+/*Box*/
+
+/*Content*/
+
+#content {
+    margin-top: 60px;
+    background: #f5f5f5;
+}
+
+#content #first {
+    width: 270px;
+    margin: 0 0 20px 195px;
+    float: left;
+}
+
+#two-colum #content #first {
+    width: 555px;
+}
+
+#one-colum #content #first {
+    width: 750px;
+    margin: 0 0 20px 0;
+}
+
+#content #second {
+    width: 270px;
+    float: left;
+    margin: 0 0 20px 15px;
+}
+
+#content #lateral {
+    width: 180px;
+    float: left;
+    margin: 0 0 20px -750px;
+}
+
+#lateral ul a {
+    font-size: 0.9em;
+    padding: 3px;
+    display: block;
+    line-height: 30px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: #f3f3f3;
+}
+
+#lateral ul a:hover {
+    background: #f9f9f9 url(imagens/marcador.png) no-repeat left center;
+    color: #a1a1a1;
+    padding-left: 20px;
+}
+
+.box-form label {
+    display: block;
+    cursor: pointer;
+}
+
+.box-form input {
+    padding: 5px;
+    font-size: 0.9em;
+    width: 125px;
+    background-color: #fff;
+}
+
+.box-form input.email {
+    border: none;
+}
+
+.box-form input.submit {
+    width: 80px;
+    color: #fff;
+    background-color: #b10133;
+    border: 2px solid #870529;
+    margin-top: 5px;
+}
+
+.box-content img {
+    border: 2px solid #dfdfdf;
+}
+
+.box-content img.principal-image {
+    width: 98%;
+    border: 3px solid #dfdfdf;
+}
+
+.box-content h3 {
+    text-transform: uppercase;
+    display: inline;
+    font-size: 0.8em;
+    padding: 3px;
+}
+
+.destaque h3 {
+    background: #b10333;
+    color: #fff;
+}
+
+.entrevista h3 {
+    background: #de003e;
+}
+
+#notice-list li {
+    padding: 2px;
+    border-bottom: 1px solid #ccc;
+    height: 65px;
+}
+
+#notice-list li a img {
+    float: left;
+    margin: 5px;
+}
+
+#notice-list li a {
+    text-decoration: none;
+}
+
+#notice-list li h3 {
+    font-size: 0.8em;
+    padding: 0;
+    color: #3e7ab9;
+}
+
+#notice-list li p {
+    font-size: 0.7em;
+    color: #000;
+}
+
+#notice-list li:hover {
+    background: #eee;
+    cursor: pointer;
+}
+
+.box-content a {
+    text-decoration: none;
+    color: #b10133;
+}
+
+/*Content*/
+
+/*Footer*/
+
+#container-footer {
+    background: #294c71;
+    clear: both;
+    padding: 20px;
+}
+
+#footer {
+    width: 750px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+/*Footer

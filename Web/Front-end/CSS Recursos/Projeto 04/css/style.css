@@ -1,0 +1,279 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+ul {
+    list-style: none;
+}
+
+/*General*/
+
+/*Header*/
+
+header {
+    background: #06aa48;
+    height: 80px;
+}
+
+header a h1 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 80px;
+    float: left;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+nav ul{
+    float: right;
+}
+
+nav ul li {
+    float: left;
+    line-height: 80px;
+    margin-right: 80px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid white;
+}
+
+
+/*Header*/
+
+/*Content*/
+
+/*Contrast*/
+
+#content {
+   margin: 0 auto;
+   width: 1350px;
+   margin-top: 20px;
+}
+
+#contrast .top{
+    width: 850px;
+    height: 550px;
+    float: left;
+    border-radius: 15px;
+}
+
+#contrast .second {
+    width: 485px;
+    height: 265px;
+    float: right;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+#contrast .desc-first {
+    width: 1350px;
+    position: absolute;
+    top: 570px;
+    left: 90px;
+    color: #35c770;
+}
+
+#contrast .desc-first h4 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+#contrast .desc-second {
+    width: 485px;
+    position: absolute;
+    top: 270px;
+    left: 955px;
+    color: #35c770;
+}
+
+#contrast .desc-second h4 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+#contrast .desc-third {
+    width: 485px;
+    position: absolute;
+    top: 555px;
+    left: 955px;
+    color: #35c770;
+}
+
+#contrast .desc-third h4 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+#contrast img:hover, #contrast h4:hover, #contrast p:hover {
+    cursor: pointer;
+}
+
+/*Contrast*/
+
+/*Posts*/
+
+.posts {
+    width: 100%;
+    float: left;
+}
+
+.posts .post .post-image img {  
+    width: 404px;
+    height: 227px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 15px;
+}
+
+.posts .post {
+    height: 250px;
+    border-bottom: 2px solid #777;
+    margin-top: 23px;
+    width: 1110px;
+}
+
+.posts #last-post {
+    border-bottom: none;
+}
+
+.posts .post .post-title {
+    color: #35c770;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.posts .post .post-title:hover {
+    color: #06aa48;   
+}
+
+.posts .post .post-resume, .post-author {
+    margin-top: 10px;
+    color: #777;
+}
+
+
+/*Posts*/
+
+/*Mensal post*/
+
+#mensal-post {
+    clear: both;
+    margin-bottom: 25px;
+}
+
+#mensal-post h1 {
+    background: #06aa48;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.5em;
+    border-radius: 10px;
+    padding: 0px 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#mensal-post img {
+    width: 850px;
+    height: 550px;
+    border-radius: 10px;
+}
+
+#mensal-content {
+    text-align: justify;
+    width: 490px;
+    float: right;
+    margin-top: 5px;
+}
+
+#mensal-content h2 {
+    font-size: 1.6em;
+    margin-bottom: 5px;
+}
+
+#mensal-content .mensal-author {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: black;
+}
+
+#mensal-content p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+#mensal-content a {
+    text-decoration: none;
+    font-style: italic;
+    color: #06aa48;
+}
+
+#mensal-content a:hover {
+    text-decoration: underline;
+}
+
+
+
+/*Mensal post*/
+
+/*Content*/
+
+/*Footer*/
+
+footer {
+    text-align: left;
+    background: #06aa48;
+    color: white;
+    font-size: 0.6em;
+    height: 50px;
+    clear: both;
+    line-height: 45px;
+}
+
+#footer-content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#footer-content h1 {
+    display: inline;
+} 
+
+#footer-content ul li {
+    float: left;
+    list-style: none;
+    margin-left: 35px;
+}
+
+#footer-content ul {
+    float: right;
+}
+
+#footer-content ul li a {
+    font-size: 1.5em;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#footer-content ul li a:hover {
+    border-bottom: 2px solid white;
+}
+
+/*Footer*/

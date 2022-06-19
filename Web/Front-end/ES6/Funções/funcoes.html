@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+
+        //Funções com parâmetro default
+        //Essas funções se consiste em quando o parâmetro não for declarado na chamada da função
+        //(undefined), eles sejam substituidos pelo parâmetro default.
+
+        /*function contarHistoria(nome = 'Dudu', acao = 'enterrar ossos', dono = 'João') {
+            console.log(`Era uma vez um cachorro chamado ${nome}, ele adorava ${acao}, e tinha um dono chamado ${dono}.`);
+        }
+
+        contarHistoria('Bidu', undefined, 'Marcelo');*/
+        
+        //Caso algum parâmetro não fosse chamado eles seriam definidos como 'undefined'.
+        //Ou seja, os parâmetros default do ES6 substitui o 'undefined'
+
+        
+        //------------------------------------------------
+
+        //Arrow function
+        //Nada mais é que uma forma mais resumida de se escrever funções ANONIMAS, ou seja, funções que não são chamadas,
+        //ou que para se chamar é necessário um váriavel.
+
+        /*let quadrado = function(x) {
+            return x*x;
+        } Esse seria o convencional */
+
+        /*let quadrado = (x) => {
+            return x*x;
+        } Sintaxe geral */
+
+        /*let quadrado = x => {
+            return x*x;
+        } 
+        Não foi necessário os parenteses, devido a que só é necessário 1 parâmetro para essa função,
+        porém, vale citar que caso fosse mais de um parâmetro seria necessário os parenteses, e claro,
+        caso a função não necesitasse de parâmetro os parenteses vazios seriam necessários */
+
+        let quadrado = x => x*x;
+        /*Como apenas uma lógica foi executada, então nem as chaves foram necessárias e 
+        nem a palavra return*/
+
+        let parImpar = num => num%2==0 ? 'par' : 'impar';
+        
+        console.log(quadrado(3));
+        console.log(parImpar(7));
+        
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

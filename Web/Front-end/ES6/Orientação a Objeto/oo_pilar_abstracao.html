@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+
+        //Entidade
+
+        //O pilar da abstração necessita de:
+        //Entidade, Identidade, Características e Ações
+
+        //Identidade
+        class contaBancaria {
+
+            //Características
+            constructor() {
+                this.agencia = '1142';
+                this.numeroConta = '75245';
+                this.saldo = 50;
+                this.limite = 750;
+            }
+
+            //Ações
+            depositar(valor) {
+                this.saldo += valor;
+            }
+
+            sacar(valor) {
+                this.saldo -= valor;
+            }
+
+            mostrarSaldo() {
+                return this.saldo;
+            }
+
+        }
+
+        let a = new contaBancaria();
+        let b = new contaBancaria();
+
+        console.log(a.mostrarSaldo());
+        a.depositar(100);
+        console.log(a.mostrarSaldo());
+        a.sacar(50);
+        console.log(a.mostrarSaldo());
+
+        console.log(b.mostrarSaldo());
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

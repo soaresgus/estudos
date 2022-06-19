@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //O pilar do polimorfismo se consiste em você remover uma ação herdada de outra classe.
+
+
+        class Animal {
+            constructor(cor, tamanho) {
+                this.cor = cor;
+                this.tamanho = tamanho;
+            }
+
+            dormir() {
+                console.log('Dormiu');
+            }
+        }
+
+        class Passaro extends Animal {
+            constructor(bico, cor, tamanho) {
+                /*this.cor = 'Branco e marrom'
+                this.tamanho = 30;*/
+                super(cor, tamanho);
+                //O super() é necessário sempre para dar acesso ao construtor da classe extendida,
+                //é necessário sempre que uma classe está herdando outra,
+                //e sempre deve estar antes de qualquer this.
+                this.bico = bico;
+            }
+
+            voar() {
+                console.log('Voou');
+            }
+
+            /*dormir() {
+                console.log('Dormiu');
+            }*/
+        }
+
+        class Papagaio extends Passaro {
+            constructor(sabeFalar, bico, cor, tamanho) {
+                /*this.cor = 'Verde';
+                this.tamanho = 20;
+                this.bico = 'Médio';
+                
+                Esses atributos foram excluidos pois o bico será herdado do Passaro,
+                e a cor e tamanho será herdado do Animal que está herdado no Passaro,
+                formando assim uma 'cascata'.
+                
+                */
+                super(bico, cor, tamanho);
+                this.sabeFalar = sabeFalar;
+            }
+
+            falar() {
+                console.log('Falar');
+            }
+        }
+
+        class Avestruz extends Passaro {
+            constructor() {
+                super('Longo', 'Branco', 2500);
+            }
+
+            enterrarCabeca() {
+                console.log('Enterrou a cabeça.')
+            }
+
+            voar() {
+                console.log('Esse passáro não vooa');
+                //return false; - Caso queira retornar nada.
+            }
+            //Para remover um método herdado, basta sobrescrever ele.
+        }
+
+        let papagaio = new Papagaio(true, 'Médio', 'Verde', 20);
+        console.log(papagaio);
+
+        let avestruz = new Avestruz();
+        console.log(avestruz);
+        avestruz.enterrarCabeca();
+        avestruz.voar(); 
+        //Na teoria avestruz não vooa, então esse método herdado do passaro não pode ocorrer da mesma forma
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

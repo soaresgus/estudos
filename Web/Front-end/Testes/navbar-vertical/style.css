@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+#header {
+    height: 70px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #969696;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#menu {
+    display: flex;
+}
+
+#menu a {
+    padding: 5px 15px;
+    margin: 20px 10px;
+}
+
+#menu a:hover {
+    background-color: #797979;
+}
+
+#mobile {
+    display: none;
+    cursor: pointer;
+}
+
+#close-mobile {
+    visibility: hidden;
+}
+
+#dark {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    z-index: 1;
+}
+
+@media (max-width: 800px) {
+    #mobile {
+        display: block;
+        border: none;
+        background: none;
+        width: 20px;
+        border-top: 2px solid;
+
+    }
+
+    #mobile::after, #mobile::before {
+        content: '';
+        display: block;
+        height: 1.5px;
+        background-color: currentColor;
+        margin-top: 5px;
+    }
+
+    #menu {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #c5c5c5;
+        height: 100vh;
+        width: 150px;
+        visibility: hidden;
+        transition: .6s;
+        overflow-x: hidden;
+        opacity: 0;
+        z-index: 1000;
+    }
+
+    #menu a {
+        display: block;
+        margin-bottom: 25px;
+        padding: 15px;
+    }
+
+    #menu li:nth-child(2) {
+        margin-top: 55px;
+    }
+
+
+    #nav.ativo #menu {
+        width: 250px;
+
+    }
+
+    #nav.ativo #menu, #nav.ativo #close-mobile {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #close-mobile {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 25px;
+        visibility: hidden;
+        transition: .6s;
+        opacity: 0;
+        padding: 5px;
+    }
+
+    #close-mobile::after, #close-mobile::before {
+        display: block;
+        content: '';
+        height: 1.5px;
+        width: 20px;
+        background-color: black;
+        position: absolute;
+        right: 0;
+        top: 10px;
+    }
+
+    #close-mobile::after {
+        transform: rotate(45deg);
+    }
+
+    #close-mobile::before {
+        transform: rotate(-45deg);
+    }
+}
+
+

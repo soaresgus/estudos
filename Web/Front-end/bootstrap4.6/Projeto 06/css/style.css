@@ -1,0 +1,256 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(../img/capa.png), url(../img/ruido.png), linear-gradient(50deg, #ff4169, #7c28f8);
+    background-attachment: fixed;
+    font-family: Helvetica, sans-serif;
+}
+
+html, body, #home {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Header */
+
+#header a {
+    color: white;
+}
+
+.nav-transparente {
+    padding: 15px 0;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+
+#header a:hover {
+    color: #9bf0e1;
+}
+
+.divisor {
+    width: 1px;
+    background-color: white;
+    margin: 12px 15px;
+}
+
+@media screen and (max-width: 767.5px) {
+    #nav-last {
+        border-bottom: 1px solid white;
+    }
+
+    .divisor {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 574.5px) {
+    #logo, .nav-item{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .navbar-toggler {
+        margin-right: 15px;
+    }
+}
+
+
+/* Header */
+
+/*Capa*/
+
+#capa {
+    text-align: center;
+}
+
+.btn-custom {
+    color: white;
+    border-radius: 500px;
+    text-transform: uppercase;
+    transition: background 0.4s, color 0.4s;
+    padding: 10px 20px;
+    margin: 0 10px;
+}
+
+.btn-roxo {
+    background: #7c25f8;
+}
+
+.btn-roxo:hover {
+    background: #6207e3;
+    color: white;
+}
+
+.btn-branco {
+    border: 2px solid white;
+}
+
+.btn-branco:hover {
+    background: white;
+    color: black;
+}
+
+/*Capa*/
+
+/*Conteudo 1*/
+
+#conteudo-1 {
+    background-color: white;
+    padding: 30px 0;
+}
+
+#conteudo-1 h2, #conteudo-1 h3 {
+    color: #7c25f8;
+}
+
+.albuns {
+   margin-top: 30px;
+}
+
+/*Conteudo 1*/
+
+/*Conteudo 2*/
+
+#conteudo-2 {
+    padding: 20px 0;
+    color: white;
+}
+
+#conteudo-2 h3{
+    color: #9bf0e1;
+}
+
+.rotate {
+    transform: rotate(30deg);
+    padding-left: 80px;
+}
+
+@media screen and (max-width: 991.5px) {
+    .rotate {
+        display: none;
+    }
+}
+
+/*Conteudo 2*/
+
+/*Rodape*/
+
+#rodape {
+    background-color: black;
+    padding: 50px 0 20px 0;
+    position: relative;
+}
+
+#rodape h4{
+    color: #919496;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+#rodape .navbar-nav a{
+    color: white;
+    font-size: 0.8em;
+}
+
+#rodape .navbar-nav a:hover {
+    color: #9bf0e1;
+    text-decoration: none;
+}
+
+#rodape ul {
+    list-style: none;
+}
+
+#rodape ul li {
+    float: right;
+    margin: 0 5px;
+}
+
+@media screen and (max-width: 991.5px) {
+    #icon {
+        margin-right: 35px;
+        margin-bottom: 15px;
+    }   
+
+    #rodape h4 {
+        margin-top: 10px;
+    }
+
+    #social {
+        margin-top: 15px;
+    }
+}
+
+/*Rodape*/
+
+/*Tipografia*/
+
+h1 {
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin-bottom: 50px;
+    color: white;
+}
+
+h2 {
+	font-size: 3em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+
+h3 {
+	font-size: 2em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    h1 {
+        font-size: 3em;
+    }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    h1 {
+        font-size: 4em;
+    }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    h1 {
+        font-size: 5em;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 6em;
+    }
+}
+
+@media screen and (max-width: 768.5px) {
+    .btn-roxo {
+        margin-bottom: 15px;
+    }
+
+}
+
+@media screen and (max-width: 375.5px) {
+    .btn-custom {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 320.5px) {
+    .btn-custom {
+        font-size: 15px;
+    }
+}
+
+/*Tipografia*/
