@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //Objeto literal nada mais é que um objeto descritivo, muito utilizado quando apenas
+        //um único item é necessário, não um conjunto.
+
+        class Produto {
+            constructor(preco, descricao) {
+                this.preco = preco;
+                this.descricao = descricao;
+            }
+
+            anunciar() {
+                console.log(`${this.descricao} por apenas ${this.preco}`);
+            }
+        }
+
+        let produto = new Produto(1200, 'Notebook');
+
+        produto.anunciar();
+
+        let produtoLiteral = {
+            descricao: 'Geladeira',
+            preco: 2100,
+            anunciar: function () {
+                console.log(`${this.descricao} por apenas ${this.preco}`);
+            }
+        }
+
+        produtoLiteral.anunciar();
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

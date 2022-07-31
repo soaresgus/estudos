@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação de escrita</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        height: 85px;
+    }
+
+    .texto {
+        font-size: 85px;
+    }
+
+    #cursor {
+        background: black;
+        height: 100px;
+        width: 2px;
+        display: block;
+        content: '';
+        position: absolute;
+    }
+</style>
+
+<body>
+
+    <div>
+        <span id="cursor"></span>
+        <span id="escrita" class="texto">Gustavo Soares / Front-End Developer</span>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

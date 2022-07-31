@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Grid Layout</title>
+</head>
+
+    <body>
+
+        <div>
+            <h2>grid-template-colums</h2>
+            <h4>Define os paramêtros das colunas</h4>
+
+            <div class="grid grid-template-colums">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+                <div class="item">Item 5</div>
+                <div class="item">Item 6</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>grid-template-rows</h2>
+            <h4>Define os paramêtros das linhas</h4>
+
+            <div class="grid grid-template-rows">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+                <div class="item">Item 5</div>
+                <div class="item">Item 6</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>grid-template-areas</h2>
+            <h4>Define áreas do grid e suas posições</h4>
+
+            <div class="grid grid-template-areas">
+                <div class="item logo">Logo</div>
+                <div class="item nav">Nav</div>
+                <div class="item sidenav">Sidenav</div>
+                <div class="item content">Content</div>
+                <div class="item adverts">Adverts</div>
+                <div class="item footer">Footer</div>
+            </div>
+        </div>
+        
+        <div>
+            <h2>grid-template</h2>
+            <h4>Atalho geral que engloba os parâmetros das áreas, linhas e colunas</h4>
+
+            <div class="grid grid-template">
+                <div class="item logo">Logo</div>
+                <div class="item nav">Nav</div>
+                <div class="item sidenav">Sidenav</div>
+                <div class="item content">Content</div>
+                <div class="item adverts">Adverts</div>
+                <div class="item footer">Footer</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>grid-auto-colums</h2>
+            <h4>Colunas automáticas serão criadas com medidas desse paramêtro</h4>
+
+            <div class="grid grid-auto-colums">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+                <div class="item">Item 5</div>
+                <div class="item item-6">Item 6</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>grid-auto-rows</h2>
+            <h4>Linhas automáticas serão criadas com medidas desse paramêtro</h4>
+
+            <div class="grid grid-auto-rows">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+                <div class="item">Item 5</div>
+                <div class="item item-6">Item 6</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>grid-auto-flow</h2>
+            <h4>Define o fluxo de criação dos itens</h4>
+
+            <div class="grid grid-auto-flow">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+                <div class="item">Item 5</div>
+                <div class="item">Item 6</div>
+                <div class="item">Item 6</div>
+                <div class="item">Item 6</div>
+                <div class="item">Item 6</div>
+                <div class="item">Item 6</div>
+            </div>
+        </div>
+
+        <h1>Grid Item</h1>
+        <h4>Irá controlar cada item do grid</h4>
+
+        <div>
+            <h2>grid-column</h2>
+            <h4>Define quais colunas serão ocupadas pelo grid item ou qual será sua expansão</h4>
+
+            <div class="grid-2 grid-column-1">
+                <div class="item item-1">Item 1</div>
+                <div class="item item-2">Item 2</div>
+                <div class="item item-3">Item 3</div>
+                <div class="item item-4">Item 4</div>
+                <div class="item item-5">Item 5</div>
+                <div class="item item-6">Item 6</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>grid-row</h2>
+            <h4>Define quais linhas serão ocupadas pelo grid item ou qual será sua expansão</h4>
+
+            <div class="grid-2 grid-row-1">
+                <div class="item item-1">Item 1</div>
+                <div class="item item-2">Item 2</div>
+                <div class="item item-3">Item 3</div>
+                <div class="item item-4">Item 4</div>
+                <div class="item item-5">Item 5</div>
+                <div class="item item-6">Item 6</div>
+            </div>
+        </div>
+
+        <div>
+            <h2>grid-area</h2>
+            <h4>Globaliza os parâmetros grid-row-start / grid-column-start / grid-row-end / grid-column-start</h4>
+
+            <div class="grid-2 grid-area">
+                <div class="item item-1">Item 1</div>
+                <div class="item item-2">Item 2</div>
+                <div class="item item-3">Item 3</div>
+                <div class="item item-4">Item 4</div>
+                <div class="item item-5">Item 5</div>
+                <div class="item item-6">Item 6</div>
+            </div>
+        </div>
+
+
+    </body>
+
+</html>

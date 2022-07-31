@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--JQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script>
+        $('document').ready(() =>{ //Quando o DOM estiver carregado irá executar.
+            console.log($('#exemplo'));
+        });
+		
+		/*window.onload(() => {
+		
+		}); Executado quando TUDO for carregado, isso inclui imagens, videos, etc*/
+		
+		/*document.addEventListener("DOMContentLoaded", () => {
+		  
+		}); Executado quando o DOM for carregado (Mais similar ao JQUERY), independente de midias*/
+        
+    </script>
+    
+    <div id="exemplo">Salve</div>
+
+
+
+</body>
+
+</html>

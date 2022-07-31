@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+
+	<title>Requisições assíncronas</title>
+
+	<!-- bootstrap - link cdn -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<script>
+
+	function requisicao(url) {
+		if (!document.getElementById('loading')) {
+			let loading = document.createElement('img');
+			loading.src = 'loading.gif';
+			loading.className = 'rounded mx-auto d-block';
+			loading.id = 'loading';
+
+			document.getElementById('conteudo').innerHTML = '';
+			document.getElementById('conteudo').appendChild(loading);
+		}
+
+		let ajax = new XMLHttpRequest();
+
+		/*
+		readyStates
+
+		--Podemos controlar--
+		0 = Requisição não iniciada
+		1 = Conexão com o servidor estabelecida
+		--Podemos controlar--
+
+		--Servidor controla--
+		2 = Requisição recebida
+		3 = Processando requisição
+		4 = Requisição finalizada
+		--Servidor controla--
+
+		*/
+
+		
+		//Requisição não iniciada. readyState = 0
+		//console.log(ajax.readyState);
+		
+		ajax.open('GET', url); //Estabelece uma conexão com o servidor
+		
+		//Conexão com o servidor estabelecida. readyState = 1
+		//console.log(ajax.readyState);
+		
+		ajax.send();
+		
+		//Lógica que fique olhando o progresso da requisição no servidor
+		ajax.onreadystatechange = () => {
+			//console.log(ajax.readyState);
+
+			/*
+			Status
+			https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+	
+			200 = Sucesso
+			404 = Arquivo não encontrado
+			*/
+
+			if(ajax.readyState == 4 && ajax.status == 200) {
+				console.log('Requisição finalizada');
+				console.log(`Status da requisição: ${ajax.status}`);
+				document.getElementById('loading').remove();
+				document.getElementById('conteudo').innerHTML = ajax.responseText;
+			}
+
+			if(ajax.readyState == 4 && ajax.status != 200) {
+				console.log('Requisição finalizada');
+				console.log(`Status da requisição: ${ajax.status}`);
+				document.getElementById('loading').remove();
+				document.getElementById('conteudo').innerHTML = `Requisição não encontrada. Código de status: ${ajax.status}`;
+			}
+		}
+
+		//console.log(ajax);
+	}
+
+</script>
+
+<body>
+
+	<!-- Static navbar -->
+	<nav class="navbar navbar-light bg-light mb-4">
+		<div class="container">
+			<div class="navbar-brand mb-0 h1">
+				<h3>Requisições síncronas e assíncronas</h3>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="container">
+
+		<div class="row mb-2">
+			<div class="col-md-4 center"></div>
+			<div class="col-md-4 center">
+				<a href="#" class="btn btn-primary" onclick="requisicao('pagina_1_conteudo.php')">Página 1</a>
+				<a href="#" class="btn btn-primary" onclick="requisicao('pagina_2_conteudo.html')">Página 2</a>
+				<a href="#" class="btn btn-primary" onclick="requisicao('pagina__3_conteudo.html')">Página 3</a>
+			</div>
+			<div class="col-md-4 center"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-1"></div>
+
+			<div class="col-md-10" id="conteudo">
+
+			</div>
+
+			<div class="col-md-1"></div>
+		</div>
+
+	</div>
+</body>
+
+</html>

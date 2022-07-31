@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+
+        var global = 'Teste'; //Var é uma varíavel global, na qual pode ser acessada de qualquer escopo que esteja dentro daquele escopo.
+        //Então como essa varíavel está no escopo global pode ser acessado de qualquer local;
+
+        function f() {
+            //
+            global = '123';
+
+            var global2 = '321'; //Porém, uma variável declarada no escopo de uma FUNÇÃO, ela ficará isolada na função.
+        }
+
+        var global4 = '0';
+
+        if(true) {
+            f();
+            console.log(global);
+            //console.log(global2);
+            var global3 = '456'; //Já uma variável declarada no escopo de bloco se extende ao escopo superior a ele.
+            let global4 = '789' //Já um LET declarado no escopo de bloco, ele será mantido nele e seus filhos, não se expandindo
+            //ao escopo acima.
+
+            console.log(global4);
+        }
+
+        //Resumo: Var quando declarado no escopo de bloco (if, switch, for, etc), ele se expandirá ao escopo acima dele.
+        //Já o Let quando declarado no escopo de bloco, ele não se expandirá ao escopo acima.
+        //E vale citar que o escopo de uma função ele jamais de expande acima, todas variáveis ficaram isoladas lá.
+
+        console.log(global3);
+        console.log(global4);
+
+        console.log('------------------------------------');
+
+        const constante = 'Teste constante'; 
+        //Variáveis constantes (const) nunca pode ser alterado seu valor, eles são 'engessados'
+        
+        console.log(constante);
+        
+        constante = 'Teste 2';
+        //Irá gerar um erro.
+        
+        console.log(constante);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

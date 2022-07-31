@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+    <body>
+        <input id="input" type="text" placeholder="Cadastrar item">
+        <button id="adicionar">Adicionar</button>
+        <button id="ordernar">Ordernar</button>
+
+
+        <script>
+            var objetos = ['Cadeira', 'Impressora', 'Garfo'];
+
+            var input = document.getElementById('input');
+            var btn_add = document.getElementById('adicionar');
+            var btn_ord = document.getElementById('ordernar');
+
+            function adicionar() {
+                if (input.value != '') {
+                    if(objetos.indexOf(input.value) === -1) {
+                        objetos.push(input.value);
+                        console.log(objetos);
+                        input.value = '';
+                    }else {
+                        alert('Objeto já existente');
+                    }
+                } else {
+                    alert('Informe um valor válido');
+                }
+            }
+
+            btn_add.addEventListener('click', () => adicionar());
+            btn_ord.addEventListener('click', () => console.log(objetos.sort()));
+        </script>
+    </body>
+
+</html>

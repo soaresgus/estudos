@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções Data</title>
+
+    <script>
+        /*
+        var data = new Date(); //Isso aqui é local.
+      
+        document.writeln(data.getDate());
+        document.writeln(data.getMonth()+1); //0 a 11;
+        document.writeln(data.getFullYear());  
+        */
+
+        var input1 = prompt('Digite a data 1').split('/');
+        var input2 = prompt('Digite a data 2').split('/');
+
+        var data1 = new Date(input1[2], input1[1] - 1, input1[0]).getTime();
+        var data2 = new Date(input2[2], input2[1] - 1, input2[0]).getTime();
+
+        var diaMili = (1 * 24 * 60 * 60 * 1000);
+        var diferenca = Math.ceil((Math.abs(data1 - data2)) / diaMili);
+
+        document.write('A diferença de dias entre ' + input1.toString().replaceAll(',', '/') + ' e ' + input2.toString().replaceAll(',', '/') + " é: " + diferenca);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

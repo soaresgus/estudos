@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+input:focus, textarea:focus, button:focus, select:focus {
+    box-shadow: 0 0 0 0 !important;
+    outline: 0 !important;
+    border: 0 !important;
+}
+
+/*Header*/
+
+#header #logo{
+    width: 150px;
+    background: url(../img/logo.png) no-repeat top left;
+    background-size: 150px;
+    text-indent: -3000px;
+    height: 100%;
+}
+
+@media screen and (max-width: 767.5px) {
+    #login {
+        margin: 20px 0px;
+    }
+
+    #header-img {
+        display: none;
+    }
+
+    #social {
+        margin-top: 15px;
+    }
+}
+
+/*Header*/

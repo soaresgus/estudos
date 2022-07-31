@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Manipulando Estilos</title>
+
+</head>
+
+<style>
+    div {
+        height: 50px;
+        width: 50px;
+        margin: 20px 0;
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+
+    <button id="vermelho">Vermelho</button>
+    <button id="verde">Verde</button>
+    <button id="azul">Azul</button>
+
+    <div id="div"></div>
+
+    <script>
+
+        function alterar(cor) {
+            var div = document.getElementById('div');
+
+            div.style.background = cor;
+        }
+
+        document.getElementById('vermelho').addEventListener('click', () => alterar('red'));
+        document.getElementById('verde').addEventListener('click', () => alterar('green'));
+        document.getElementById('azul').addEventListener('click', () => alterar('blue'));
+
+    </script>
+</body>
+
+</html>

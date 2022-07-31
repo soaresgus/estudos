@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        //O pilar da herança se consiste em você evitar repetição dentro dos objetos, 'importando' objetos para
+        //outros objetos.
+
+
+        class Animal {
+            constructor() {
+                this.cor = '';
+                this.tamanho = null;
+            }
+
+            dormir() {
+                console.log('Dormiu');
+            }
+        }
+
+        class Cachorro extends Animal { //Palavra reservada 'extends', utilizada para herdar outro objeto
+            constructor() {
+                /* this.cor = 'Branco e marrom';
+                 this.tamanho = 50; - Esses atributos foram apagados pois serão herdados do objeto Animal*/
+                super(); 
+                //O super() é necessário sempre para dar acesso ao construtor da classe extendida,
+                //é necessário sempre que uma classe está herdando outra,
+                //e sempre deve estar antes de qualquer this.
+                this.orelhas = 'Longas e rebaixadas';
+            }
+
+            correr() {
+                console.log('Correu');
+            }
+
+            /*dormir() {
+                console.log('Dormiu');
+            } Também apagado pois esse método está herdado do objeto Animal */
+
+            rosnar() {
+                console.log('Rosnou');
+            }
+        }
+
+        class Passaro extends Animal {
+            constructor() {
+                /*this.cor = 'Branco e marrom'
+                this.tamanho = 30;*/
+                super();
+                this.bico = 'Longo e pontudo';
+            }
+
+            voar() {
+                console.log('Voou');
+            }
+
+            /*dormir() {
+                console.log('Dormiu');
+            }*/
+        }
+
+        class Papagaio extends Passaro {
+            constructor() {
+                /*this.cor = 'Verde';
+                this.tamanho = 20;
+                this.bico = 'Médio';
+                
+                Esses atributos foram excluidos pois o bico será herdado do Passaro,
+                e a cor e tamanho será herdado do Animal que está herdado no Passaro,
+                formando assim uma 'cascata'.
+                
+                */
+                super();
+                this.sabeFalar = true;
+            }
+
+            falar() {
+                console.log('Falar');
+            }
+        }
+
+        let cachorro = new Cachorro();
+        let passaro = new Passaro();
+        let papagaio = new Papagaio();
+
+        cachorro.cor = 'Branco e preto';
+        passaro.cor = 'Branco e marrom';
+        papagaio.cor = 'Verde';
+        papagaio.bico = 'Médio';
+
+
+        cachorro.dormir();
+
+        console.log(cachorro.cor);
+
+        passaro.dormir();
+
+        console.log(passaro.cor);
+
+        papagaio.falar();
+
+        console.log(papagaio.cor);
+
+        papagaio.dormir();
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+@keyframes animation-box {
+    from {
+        background: red;
+        width: 300px;
+    }
+
+    to {
+        background: green;
+        width: 500px;
+    }
+}
+
+#box {
+    width: 300px;
+    height: 300px;
+    background: red;
+    /*animation-name: animation-box;
+    animation-duration: 5s;
+    animation-delay: 3s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;*/
+
+    animation: animation-box 5s 3s 2 alternate;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+
+        //Destructuring pode ser entendido como uma forma de 'desestrutura o código',
+        //o deixando menos cheio, mais simples.
+
+        let frutas = ['Abacaxi', 'Mamão', 'Uva', 'Goiaba'];
+
+        /*let a = frutas[0];
+        let b = frutas[1];
+        let c = frutas[2];
+        let d = frutas[3];*/
+        
+        //Em caso de arays se usa colchetes ([])
+        //let [a, b, c, d] = frutas //Percaba que quando os colchetes ([]) estão a esquerda, é um destructuring, e não um array. 
+        //O código escrito acima gera o mesmo resultado de eu declarar cada váriavel, ou seja, o destucturing está percorrendo o array.
+
+        let [a, , b, c] = frutas //Perceba que devido ao espaço vazio, eu pulei o índice 1 (Mamão);
+
+        //console.log(a, b, c);
+
+        let coisas = [['Abacaxi', 'Mamão', 'Uva', 'Goiaba'], ['João', 'Maria']];
+
+        let [[,,fruta],[,nome2]] = coisas;
+
+        console.log(nome2);
+        console.log(fruta);
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

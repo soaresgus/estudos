@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+
+		<style>
+			
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+	<style>
+		.centro {
+			text-align: center;
+		}
+	</style>
+		
+		<div id="div1" class="vermelho" style="background-color: green;">Div 1</div>
+
+		<button id="btn1">Botao 1</button>
+		<button id="btn2">Botao 2</button>
+		
+        <script>
+			$('#btn2').click(() => {
+				alert('Botão 2 clicado');
+			})
+
+			$('#btn1').click(() => {
+				$('#btn2').trigger('click'); //Executa um evento de forma programática
+			})
+
+			$('#div1').hover((e) => { 
+				//Espera como parâmeto 1 ou 2 funções, a primeira é quando colocar o mouse em cima, e a outro quando tirar o mouse
+				//E casa tenha só o primeiro parâmetro a mesma função será para os dois
+				$('#div1').toggleClass('centro'); //Tira a classe caso tenha, e coloca caso não tenha
+			})
+
+	        </script>
+	</body>
+
+</html>

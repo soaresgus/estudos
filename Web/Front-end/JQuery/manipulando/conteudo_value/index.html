@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--JQuery CDN-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<input>
+    
+    <input type="text" id="input" value="Valor do input">
+
+    <input type="radio" name="sexo" class="sexo" value="m">Masculino
+    <input type="radio" name="sexo" class="sexo" value="f" checked>Feminino
+
+    <input type="checkbox" name="pref" class="pref" value="php">PHP
+    <input type="checkbox" name="pref" class="pref" value="js" checked>JS
+    <input type="checkbox" name="pref" class="pref" value="angular" checked>Angular
+    <input type="checkbox" name="pref" class="pref" value="react">React
+
+    <script>
+        console.log($('#input').val());
+
+        $('#input').val('teste');
+
+        console.log($('.sexo:checked').val()); //Irá retornar o valor do input marcado
+
+        console.log($('.pref:checked').val()); //Nesse caso irá retornar primeiro checkbox marcado
+
+        //Mas caso queira retornar todos os checados, usamos o $.each, que se compara ao forEach nativo
+
+        //Espera como primeiro parâmetro um array, nesse exemplo retornamos um array de checkbox que estão marcados
+        //E de segundo parâmetro uma função de callback
+        console.log('Todas marcadas:')
+        $.each($('.pref:checked'), (indice, valor) => {
+            console.log(valor.value);
+        }) 
+
+        
+
+    </script>
+    
+</body>
+
+</html>

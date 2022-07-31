@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Manipulando Classes</title>
+
+</head>
+
+<style>
+    .estilo1 {
+        color: red;
+        font-size: 34px;
+    }
+
+    .estilo2 {
+        color: blue;
+        font-size: 13px;
+    }
+</style>
+
+<body>
+
+    <h2 id="titulo" class="classe0 classe1">Manipulando estilos</h2>
+    <button id="btn">Manipular</button>
+
+    <script>
+        var titulo = document.getElementById('titulo');
+        function alterar(classe) {
+            /*titulo.className = classe; - 
+            Será pouco utilizado, pois remove TODAS as classes do elemento e define apenas essa como única classe.*/
+
+            //titulo.classList.add(classe);
+            //titulo.classList.remove(classe);
+            titulo.classList.toggle(classe);
+        }
+
+        document.getElementById('btn').addEventListener('click', () => alterar('estilo1'));
+
+    </script>
+</body>
+
+</html>

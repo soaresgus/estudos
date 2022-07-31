@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+
+        class Sofa {
+
+            constructor(qtd_pes, lugares, reclinavel, cor) {
+                this.qtd_pes = qtd_pes;
+                this.lugares = lugares;
+                this.reclinavel = reclinavel;
+                this.cor = cor;
+                this.reclinado = false;
+            }
+
+            reclinar() {
+                if(this.reclinavel == true) {
+                    if(this.reclinado == false) {
+                        this.reclinado = true;
+                        console.log('Sofa reclinado');
+                    }else {
+                        this.reclinado = false;
+                        console.log('Sofa desreclinado');
+                    }
+                }else {
+                    console.log('Sofa não é reclinavel');
+                }
+            }
+        }
+
+        let sofas = [];
+
+        sofas[0] = new Sofa(4, 2, false, 'azul');
+        sofas[1] = new Sofa(6, 4, true, 'branco');
+
+        sofas[1].reclinar(sofas[1]);
+        sofas[0].reclinar(sofas[0]);
+        sofas[1].reclinar(sofas[1]);
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

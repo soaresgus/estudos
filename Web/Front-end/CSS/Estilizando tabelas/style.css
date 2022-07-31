@@ -1,0 +1,78 @@
+/*Estilizando tabelas - Gustavo
+
+body {
+	font-family: "Trebuchet MS", "Helvetica", sans-serif;
+}
+
+#tabela {
+	border-style: none;
+	border-left: none;
+	border-right: none;
+	border-collapse: collapse;
+}
+
+#primeira-coluna {
+	width: 250px;
+	text-align: left;
+	border-top: none;
+	border-left: none;
+}
+
+#segunda-coluna {
+	width: 420px;
+	text-align: left;
+	border-top: none;
+	border-left: none;
+}
+
+#terceira-coluna {
+	border-left: none;
+	border-top: none;
+}
+
+#tabela td {
+	border: none;
+	padding: 5px;
+}
+
+#tabela tr:hover {
+	background-color: #A7FFED;
+}
+
+*/
+
+/*PROFESSOR*/
+
+body {
+	font-family: "Trebuchet MS", "Helvetica", sans-serif;
+}
+
+#tabela {
+	width: 600px;
+	border-collapse: collapse;
+}
+
+#tabela th, #tabela td {
+	padding: 7px;
+}
+
+#tabela th {
+	text-transform: uppercase;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #111;
+	text-align: left;
+	font-size: 90%;
+	letter-spacing: 0.1em;
+}
+
+#tabela tr.alternado {
+	background-color: #efefef;
+}
+
+#tabela .numero {
+	text-align: right;
+}
+
+#tabela tr:hover {
+	background-color: #c3e6e5;
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Flexbox</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <h1>display: block;</h1>
+
+        <div class="item-container display-block">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>display: flex;</h1>
+        <h2>Definição que o elemento é flex</h2>
+        <div class="item-container display-flex">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>flex-direction: row;</h1>
+        <h2>Define que a direção dos itens do flex será em linha</h2>
+        <div class="item-container display-flex flex-direction-row">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>flex-direction: row-reverse;</h1>
+        <h2>Define que a direção dos itens do flex será em linha, porém, inversos</h2>
+        <div class="item-container display-flex flex-direction-row-reverse">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>flex-direction: column;</h1>
+        <h2>Define que a direção dos itens do flex será em colunas</h2>
+        <div class="item-container display-flex flex-direction-column">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>flex-direction: column-reverse;</h1>
+        <h2>Define que a direção dos itens do flex será em colunas, porém, inversos</h2>
+        <div class="item-container display-flex flex-direction-column-reverse">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>flex-wrap: nowrap;</h1>
+        <h2>Faz com que os elementos NÃO quebrem o container, passando de sua limitação</h2>
+        <div class="item-container display-flex flex-wrap-nowrap">
+            <div class="item item-1">GrandeItemNumero1</div>
+            <div class="item item-2">GrandeItemNumero2</div>
+            <div class="item item-3">GrandeItemNumero3</div>
+            <div class="item item-4">GrandeItemNumero4</div>
+        </div>
+
+        <h1>flex-wrap: wrap;</h1>
+        <h2>Faz com que os elementos QUEBREM o container, respeitando de sua limitação</h2>
+        <div class="item-container display-flex flex-wrap-wrap">
+            <div class="item item-1">GrandeItemNumero1</div>
+            <div class="item item-2">GrandeItemNumero2</div>
+            <div class="item item-3">GrandeItemNumero3</div>
+            <div class="item item-4">GrandeItemNumero4</div>
+        </div>
+
+        <h1>flex-wrap: wrap-reverse;</h1>
+        <h2>Faz com que os elementos QUEBREM o container, respeitando de sua limitação, porém inversos</h2>
+        <div class="item-container display-flex flex-wrap-wrap-reverse">
+            <div class="item item-1">GrandeItemNumero1</div>
+            <div class="item item-2">GrandeItemNumero2</div>
+            <div class="item item-3">GrandeItemNumero3</div>
+            <div class="item item-4">GrandeItemNumero4</div>
+        </div>
+
+        <h1>justify-content: flex-start;</h1>
+        <h2>Alinha todos os itens ao começo (padrão)</h2>
+        <div class="item-container display-flex justify-content-flex-start">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>justify-content: center;</h1>
+        <h2>Alinha todos os itens ao centro</h2>
+        <div class="item-container display-flex justify-content-center">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>justify-content: flex-end;</h1>
+        <h2>Alinha todos os itens ao final</h2>
+        <div class="item-container display-flex justify-content-flex-end">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>justify-content: space-between;</h1>
+        <h2>Alinha todos os itens com um espaçamento igual de ponta a ponta</h2>
+        <div class="item-container display-flex justify-content-space-between">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+        </div>
+
+        <h1>justify-content: space-around;</h1>
+        <h2>Alinha todos os itens com um espaçamento de 1x na ponta, e entre os itens de 2x</h2>
+        <div class="item-container display-flex justify-content-space-around">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>align-items: stretch;</h1>
+        <h2>Faz com que os itens crescem igualmente no eixo vertical (padrão)</h2>
+        <div class="item-container large display-flex align-items-stretch">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>align-items: flex-start;</h1>
+        <h2>Faz com que os itens se alinhem no começo igualmente no eixo vertical</h2>
+        <div class="item-container large display-flex align-items-flex-start">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>align-items: center;</h1>
+        <h2>Faz com que os itens se alinhem no centro igualmente no eixo vertical</h2>
+        <div class="item-container large display-flex align-items-center">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>align-items: flex-end;</h1>
+        <h2>Faz com que os itens se alinhem no fim igualmente no eixo vertical</h2>
+        <div class="item-container large display-flex align-items-flex-end">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>Bonus - Centro do container</h1>
+        <h2>Alinhando um item no centro com justify-content: center e align-items: center; </h2>
+        <div class="item-container large display-flex centro">
+            <div class="item item-1">Olha que belo item centralizado</div>
+        </div>
+
+        <h1>align-content: stretch;</h1>
+        <h2>Faz com que os itens crescem igualmente no eixo vertical (padrão)</h2>
+        <div class="item-container large display-flex align-content-stretch">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>align-content: flex-start;</h1>
+        <h2>Faz com que os itens se alinhem no começo do container no eixo vertical</h2>
+        <div class="item-container large display-flex align-content-flex-start">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>align-content: center;</h1>
+        <h2>Faz com que os itens se alinhem no centro do container no eixo vertical</h2>
+        <div class="item-container large display-flex align-content-center">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>align-content: flex-end;</h1>
+        <h2>Faz com que os itens se alinhem no fim do container no eixo vertical</h2>
+        <div class="item-container large display-flex align-content-flex-end">
+            <div class="item item-1">Item 1</div>
+            <div class="item item-2">Item 2</div>
+            <div class="item item-3">Item 3</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+            <div class="item item-4">Item 4</div>
+        </div>
+
+        <h1>Flex Item</h1>
+        <h2>Apartir de agora as propriedades utilizadas modificará os itens, ou seja, os filhos diretos do flex
+            container (pai). Ou seja, as propriedades precisam ser aplicadas em cada filho.</h2>
+
+        <h1>flex-grow: (number);</h1>
+        <h2>Define quanto o flex item irá crescer proporcionalmente, com o objetivo dos itens sempre atingirem 100% do
+            pai (container). Sendo 0 seu valor padrão, porém, sempre respeitando o tamanho do conteúdo.</h2>
+        <div class="item-container display-flex">
+            <div class="item item-1">Grow 0</div>
+            <div class="item item-2 flex-grow-1">Grow 1</div>
+            <div class="item item-3 flex-grow-1">Grow 1</div>
+            <div class="item item-4 flex-grow-3">Grow 3</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

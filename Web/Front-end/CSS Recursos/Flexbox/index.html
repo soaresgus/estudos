@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox - Flexbile Box Layout</title>
+
+    <style>
+        #container {
+            background: #dcdcdc;
+            height: 600px;
+            display: flex;
+
+            /*Row | Row-reverse | Column | Column-reverse*/
+
+            /*flex-direction: row;*/
+
+            /*Nowrap | wrap | wrap-reverse*/
+
+            /*flex-wrap: nowrap;*/
+
+            /*flex-start | flex-end | center | space-between | space-around*/
+
+            /*justify-content: space-around;*/
+
+            /*stretch | center | flex-start | flex-end | baseline*/
+
+            /*align-items: center;*/
+        }
+        
+        .item {
+            /*width: 200px;*/
+            height: 100px;
+            background: white;
+            border: 1px solid gray;
+            margin: 10px;
+            flex-grow: 0; /*Define a proporção de espaço ocupado por um item*/
+
+            /*Define a capacidade de redução de tamanho do item*/
+
+            flex-shrink: 1;
+
+            /*Indica o tamanho inicial do flex item antes da distribuição do espaço restante*/
+
+            flex-basis: 100px;
+        }
+
+        .item1 {
+            /*flex-grow: 1;*/
+            /*flex-shrink: 1;*/
+        }
+
+        .item2 {
+            /*flex-grow: 1;*/
+            /*flex-shrink: 2; */
+        }
+
+        .item3 {
+            /*flex-grow: 1;*/
+           /* flex-shrink: 5; Encolhe mais que os outros*/
+        }
+
+        /*.ordem1 {
+            order: 1;
+        }
+
+        .ordem2 {
+            order: 2;
+        }
+
+        .ordem3 {
+            order: 3;
+        }
+
+        .ordem4 {
+            order: 4;
+        }*/
+        
+
+
+    </style>
+
+    <!--[if lt IE 9]>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+
+    <body>
+        <h1>Flexbox</h1>
+        <div id="container">
+            <div class="item item1">01</div>
+            <div class="item item2">02</div>
+            <div class="item item3">03</div>
+            <div class="item">04</div>
+        </div>
+    </body>
+
+</html>
