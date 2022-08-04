@@ -8,7 +8,7 @@ export function App() {
   return (
     <Routes>
       <Route path="/" element={<WithQuery />} />
-      <Route path="/repo" element={<Repo />} />
+      <Route path="/repo/:repo" element={<Repo />} />
     </Routes>
   );
 }

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 
-interface IRepo {
+export interface IRepo {
   full_name: string;
   description: string;
 }
@@ -28,7 +28,9 @@ export function Repos() {
       {repositories?.map((repo) => {
         return (
           <li key={repo.full_name}>
-            <Link to={'/repo'}>{repo.full_name}</Link>
+            <Link to={`repo/${repo.full_name.replace('/', '-')}`}>
+              {repo.full_name}
+            </Link>
             <p>{repo.description}</p>
           </li>
         );
