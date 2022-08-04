@@ -14,4 +14,6 @@ app.post('/upload', upload.single('file'), (req, res) => {
   return res.json(req.file?.filename);
 });
 
-app.listen('3333', () => console.log('HTTP Server running'));
+app.listen(process.env.port || '3333', () =>
+  console.log('HTTP Server running')
+);
